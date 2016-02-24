@@ -100,10 +100,10 @@
               <textarea name="form-about-yourself" placeholder="About yourself..."
               class="form-about-yourself form-control" id="form-about-yourself" style="overflow: hidden; resize: none;"></textarea>
           </div>
-          <div class="form-group">
+          <!--<div class="form-group">
             <label class="sr-only" for="form-about-yourself">Upload Picture</label>
             <input type="file" name="pic" id="pic">
-          </div>
+          </div>-->
           <button type="submit" class="btn">Sign me up!</button>
       </form>
   </div>
@@ -132,8 +132,22 @@
       <input id="myFilter" data-type="search" value="Filter By Tags">
     </form>
 <!-- profiles-->
+<?php
+$i=1;
+$conn=mysql_connect("localhost", "root", "ajalan065");
+$database="oopadai";
+mysql_select_db($database, $conn);;
+$result = mysql_query("SELECT * FROM Users", $conn);
+$num_rows = mysql_num_rows($result);
+?>
 <div class="container">
+
 <div class="my-container my-light-grey con ">
+<?php
+while($row = mysql_fetch_assoc($result)){
+
+?>
+<br />
   <div class="my-row my-padding my-border-bottom">
     <div class="my-col m2 my-padding-medium">
       <div class="my-img">
@@ -143,15 +157,17 @@
 
     <div class="my-col m7 my-padding-medium">
       <div class="my-row">
-      mySchools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content
+	  <?php
+	  	echo $row["ABOUT"];
+} ?>
       </div>
-      <div class="my-row">
+     <!-- <div class="my-row">
         <a href="#"><span class="my-tag my-teal my-round">Mathematics!</span></a>
         <a href="#"><span class="my-tag my-teal my-round">Chemistry!</span></a>
         <a href="#"><span class="my-tag my-teal my-round">IIT!</span><a>
-      </div>
+      </div>-->
     </div>
-    <div class="my-col m3 my-padding-medium my-center">
+    <!--<div class="my-col m3 my-padding-medium my-center">
       <br>
       <i class="fa fa-inr"></i>5
       <br>
@@ -163,73 +179,7 @@
       OR
       <br>
       <a href="#"> <button class="my-btn my-green my-ripple">Request a chat <i class="fa fa-angle-right"></i></button></a>
-    </div>
-
-  </div>
-
-  <div class="my-row my-padding my-border-bottom">
-    <div class="my-col m2 my-padding-medium">
-      <div class="my-img">
-      <img src="http://www.planwallpaper.com/static/images/Winter-Tiger-Wild-Cat-Images.jpg" alt="tiger" class="my-circle" style="width:100%;">
-      </div><h4 class="my-center">mR.TIGER</h4>
-    </div>
-
-    <div class="my-col m7 my-padding-medium">
-      <div class="my-row">
-      mySchools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content
-      </div>
-      <div class="my-row">
-        <a href="#"><span class="my-tag my-teal my-round">Physics!</span></a>
-        <a href="#"><span class="my-tag my-teal my-round">Computer!</span></a>
-        <a href="#"><span class="my-tag my-teal my-round">IIT!</span><a>
-      </div>
-    </div>
-    <div class="my-col m3 my-padding-medium my-center">
-      <br>
-      <i class="fa fa-inr"></i>5
-      <br>
-      per minute
-      <br>
-
-      <a href="#"> <button class="my-btn my-green my-ripple">Request a call <i class="fa fa-angle-right"></i></button></a>
-      <br>
-      OR
-      <br>
-      <a href="#"> <button class="my-btn my-green my-ripple">Request a chat <i class="fa fa-angle-right"></i></button></a>
-    </div>
-
-  </div>
-
-  <div class="my-row my-padding my-border-bottom">
-    <div class="my-col m2 my-padding-medium">
-      <div class="my-img">
-      <img src="http://www.planwallpaper.com/static/images/Winter-Tiger-Wild-Cat-Images.jpg" alt="tiger" class="my-circle" style="width:100%;">
-      </div><h4 class="my-center">mR.TIGER</h4>
-    </div>
-
-    <div class="my-col m7 my-padding-medium">
-      <div class="my-row">
-      mySchools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content
-      </div>
-      <div class="my-row">
-        <a href="#"><span class="my-tag my-teal my-round">Physics!</span></a>
-        <a href="#"><span class="my-tag my-teal my-round">Chemistry!</span></a>
-        <a href="#"><span class="my-tag my-teal my-round">NIT!</span><a>
-      </div>
-    </div>
-    <div class="my-col m3 my-padding-medium my-center">
-      <br>
-      <i class="fa fa-inr"></i>5
-      <br>
-      per minute
-      <br>
-
-      <a href="#"> <button class="my-btn my-green my-ripple">Request a call <i class="fa fa-angle-right"></i></button></a>
-      <br>
-      OR
-      <br>
-      <a href="#"> <button class="my-btn my-green my-ripple">Request a chat <i class="fa fa-angle-right"></i></button></a>
-    </div>
+    </div>-->
 
   </div>
 

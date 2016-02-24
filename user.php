@@ -1,4 +1,5 @@
 <?php
+  session_start();
   if($_SERVER['REQUEST_METHOD']=="POST")
   {
     $usererr="";
@@ -25,6 +26,7 @@
           $database="oopadai";
           mysql_select_db($database, $conn);
           $sql="SELECT * FROM Users WHERE email='$user' AND password='$pass'";
+		  
           $val=mysql_query($sql, $conn);
           $retval=mysql_fetch_assoc($val);
           if(!$retval) {
