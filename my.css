@@ -1,6 +1,6 @@
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
-body{margin:0}
+body{margin:0;}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block;vertical-align:baseline}
 audio:not([controls]){display:none;height:0}
@@ -286,11 +286,11 @@ position:relative;-webkit-animation-name:animatebottom;-webkit-animation-duratio
 .my-text-deep-purple{color:#673ab7 !important}.my-deep-purple{color:#fff !important;background-color:#673ab7 !important}
 .my-text-red{color:#f44336 !important}.my-red{color:#fff !important;background-color:#f44336 !important}
 .my-text-sand{color:#fdf5e6 !important}.my-sand{color:#000 !important;background-color:#fdf5e6 !important}
-.my-text-teal{color:#009688 !important}.my-teal{color:#fff !important;background-color:#009688 !important}
+.my-text-teal{color:#009688 !important}.my-teal{color:#fff !important;background-color:#74AFAD !important}
 .my-text-yellow{color:#d2be0e !important}.my-yellow{color:#000 !important;background-color:#ffeb3b !important}
 .my-text-white{color:#fff !important}.my-white{color:#000 !important;background-color:#fff !important}
 .my-text-black{color:#000 !important}.my-black{color:#fff !important;background-color:#000 !important}
 .my-text-grey{color:#757575 !important}.my-grey{color:#000 !important;background-color:#9e9e9e !important}
-.my-text-light-grey{color:#f1f1f1 !important}.my-light-grey{color:#000;background-color:#f1f1f1 !important}
+.my-text-light-grey{color:#f1f1f1 !important}.my-light-grey{color:#000;background-color:#ECECEA !important}
 .my-text-dark-grey{color:#3a3a3a !important}.my-dark-grey{color:white;background-color:#616161 !important}
 .my-opacity{opacity:0.60}.my-text-shadow{text-shadow:1px 1px 0 #444}.my-text-shadow-white{text-shadow:1px 1px 0 #ddd}
