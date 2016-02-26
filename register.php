@@ -16,7 +16,7 @@
 	//$pic=($_FILES['image']['name']); 
 	if($pass==$pass2){ 
 		
-        $conn=mysql_connect("localhost", "root", "ajalan065");
+        $conn=mysql_connect("http://ajalan065.github.io/oopadai/:3306", "root", "ajalan065");
         if(!$conn)
           echo "Server connection failed";
         else

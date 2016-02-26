@@ -1,6 +1,6 @@
 <?php
 	$i=0;
-$conn=mysql_connect("localhost", "root", "ajalan065");
+$conn=mysql_connect("http://ajalan065.github.io/oopadai/:3306", "root", "ajalan065");
 $database="oopadai";
 mysql_select_db($database, $conn);
 
