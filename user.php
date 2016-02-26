@@ -4,9 +4,10 @@
   {
     $usererr="";
     $passerr="";
-    $user=$_POST['form-email'];
-    $pass=$_POST['form-password'];
-
+    $user=$_REQUEST['form-email'];
+    $pass=md5($_REQUEST['form-password']);
+echo md5($pass); echo "  ";
+echo "0ba4439ee9a46d9d9f14";
       if(!empty($user))
       {
           $usererr="success";
@@ -25,7 +26,7 @@
         {
           $database="oopadai";
           mysql_select_db($database, $conn);
-          $sql="SELECT * FROM Users WHERE email='$user' AND password='$pass'";
+          $sql="SELECT * FROM RUsers WHERE email='$user' AND password='$pass'";
 		  
           $val=mysql_query($sql, $conn);
           $retval=mysql_fetch_assoc($val);
@@ -34,7 +35,7 @@
           }
           else
             echo "<script type='text/javascript'>alert('Logged In');</script>";
-          echo "<script type='text/javascript'>location.assign('index.php');</script>";
+          echo "<script type='text/javascript'>location.assign('index.html');</script>";
         }
         mysql_close($conn);
       }
