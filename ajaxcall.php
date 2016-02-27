@@ -1,6 +1,6 @@
 <?php
 	$i=0;
-$conn=mysql_connect("localhost", "root", "ajalan065");
+$conn=mysql_connect("localhost", "root", "");
 $database="oopadai";
 mysql_select_db($database, $conn);
 
@@ -11,7 +11,7 @@ if(isset($_REQUEST["q"])) {
 	$q=$_REQUEST["q"];
 
 	if($q!="") {
-		$alltags= mysql_query("SELECT * FROM STags ", $conn);	
+		$alltags= mysql_query("SELECT * FROM stags ", $conn);	
 		$i=0;
 		$len=strlen($q);
 		foreach(explode(",", $q) as $rrows) {
@@ -19,7 +19,7 @@ if(isset($_REQUEST["q"])) {
 				//if(!strpos(strtolower($rrows), strtolower($rrow['TAGS']))) {
 				if(stristr($rrow['TAGS'], $rrows)) {
 					$email=$rrow['EMAIL'];
-					$val=mysql_query("SELECT * FROM RUsers WHERE EMAIL='$email'", $conn);
+					$val=mysql_query("SELECT * FROM rusers WHERE EMAIL='$email'", $conn);
 					$search[$i]= mysql_fetch_assoc($val);
 					$i++;
 				}
@@ -31,7 +31,7 @@ if(isset($_REQUEST["q"])) {
 	
 	else {
 	$i=0;
-	$alltags=mysql_query("SELECT * FROM RUsers", $conn);
+	$alltags=mysql_query("SELECT * FROM rusers", $conn);
 	while($rrow = mysql_fetch_assoc($alltags)) {
 					$search[$i]=$rrow;
 					$i++;
@@ -40,7 +40,7 @@ if(isset($_REQUEST["q"])) {
 }
 else {
 	$i=0;
-	$alltags=mysql_query("SELECT * FROM RUsers", $conn);
+	$alltags=mysql_query("SELECT * FROM rusers", $conn);
 	while($rrow = mysql_fetch_assoc($alltags)) {
 					$search[$i]=$rrow;
 					$i++;

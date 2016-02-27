@@ -16,7 +16,7 @@
 	//$pic=($_FILES['image']['name']); 
 	if($pass==$pass2){ 
 		
-        $conn=mysql_connect("localhost", "root", "ajalan065");
+        $conn=mysql_connect("localhost", "root", "");
         if(!$conn)
           echo "Server connection failed";
         else
@@ -28,19 +28,19 @@
             echo "Could not conect to database server";
           }
 		  else {
-			  $check="SELECT EMAIL FROM RUsers WHERE EMAIL='$user'";
+			  $check="SELECT EMAIL FROM rusers WHERE EMAIL='$user'";
 			  $val=mysql_query($check, $conn);
 			  if(mysql_num_rows($val)>=1) {
 				  echo "<script type='text/javascript'>alert('This email is already registered');</script>";
 			  }
 			  else {
-			    $sql="INSERT INTO RUsers (FNAME, LNAME, EMAIL, PASSWORD, ABOUT, TAGS, IMAGE) VALUES ('$fname', '$lname','$user', md5('$pass'), '$about', '$tags', '$pic')";
+			    $sql="INSERT INTO rusers (FNAME, LNAME, EMAIL, PASSWORD, ABOUT, TAGS, IMAGE) VALUES ('$fname', '$lname','$user', md5('$pass'), '$about', '$tags', '$pic')";
 			    mysql_query($sql, $conn);
 				echo "<script type='text/javascript'>alert('You have been registered');</script>";
 			  }
-			  $search=mysql_query("SELECT TAGS FROM STags;", $conn);
+			  $search=mysql_query("SELECT TAGS FROM stags;", $conn);
 			  foreach(explode("," , $tags) as $rows) {
-					  mysql_query("INSERT INTO STags (TAGS, EMAIL) VALUES('$rows', '$user')", $conn);
+					  mysql_query("INSERT INTO stags (TAGS, EMAIL) VALUES('$rows', '$user')", $conn);
 
 			  }
 		  }
